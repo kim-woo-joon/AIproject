@@ -1,0 +1,352 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPKC4xclFBSRf9H8vTDQDCo",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/kim-woo-joon/AIproject/blob/main/%ED%8C%8C%EC%9D%B4%EC%8D%AC_%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D_%EC%99%84%EB%B2%BD_%EA%B0%80%EC%9D%B4%EB%93%9C_ipynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "VyyRt7-Z9nb_"
+      },
+      "outputs": [],
+      "source": [
+        "import numpy as np"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from numpy.core.getlimits import array\n",
+        "array1 = np.array([1, 2, 3])\n",
+        "print('array1 type : ', type(array1))\n",
+        "print('array1 array 형태 : ', array1.shape)\n",
+        "\n",
+        "array2 = np.array([[1, 2, 3], [2, 3, 4]])\n",
+        "\n",
+        "print('array2 type : ', type(array2))\n",
+        "print('array2 array 형태 : ', array2.shape)\n",
+        "\n",
+        "array3 = np.array([[1, 2, 3]])\n",
+        "\n",
+        "print('array3 type \" ', type(array3))\n",
+        "print('array3 array 형태 : ', array3.shape)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "eDj_5Gq791sJ",
+        "outputId": "8f0a37cb-09a1-4113-c67a-b9d8b47b03b0"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "array1 type :  <class 'numpy.ndarray'>\n",
+            "array1 array 형태 :  (3,)\n",
+            "array2 type :  <class 'numpy.ndarray'>\n",
+            "array2 array 형태 :  (2, 3)\n",
+            "array3 type \"  <class 'numpy.ndarray'>\n",
+            "array3 array 형태 :  (1, 3)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "list1 = [1, 2, 3]\n",
+        "print(type(list1))\n",
+        "array1 = np.array(list1)\n",
+        "print(type(array1))\n",
+        "print(array1, array1.dtype)"
+      ],
+      "metadata": {
+        "id": "eZVuvo6t_jnq",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "465ad468-6bd0-4827-bb0d-bd6c02b224ac"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "<class 'list'>\n",
+            "<class 'numpy.ndarray'>\n",
+            "[1 2 3] int64\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "list2 = [1, 2, 'test']\n",
+        "array2 = np.array(list2)\n",
+        "print(array2, array2.dtype)\n",
+        "\n",
+        "list3 = [1, 2, 3.0]\n",
+        "array3 = np.array(list3)\n",
+        "print(array3, array3.dtype)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "LfuXD6OP1I4x",
+        "outputId": "903cfb7f-ae08-4cfd-df91-80b9f790ec97"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "['1' '2' 'test'] <U21\n",
+            "[1. 2. 3.] float64\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "org_array = np.array([3, 1, 9, 5])\n",
+        "print('원본행렬 : ', org_array)\n",
+        "sort_array1 = np.sort(org_array)\n",
+        "print('np.sort()호출 후 반환된 정렬 행렬 : ', sort_array1)\n",
+        "print('np.sort()호출 후 원본 행렬 : ', org_array)\n",
+        "\n",
+        "sort_array2 = org_array.sort()\n",
+        "\n",
+        "print('np.sort()호출 후 반환된 정렬 행렬 : ', sort_array2)\n",
+        "print('np.sort()호출 후 원본 행렬 : ', org_array)"
+      ],
+      "metadata": {
+        "id": "LczJO83N1zlL",
+        "outputId": "898aba2c-5bc7-4d7f-f1b0-1c883e290f62",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "원본행렬 :  [3 1 9 5]\n",
+            "np.sort()호출 후 반환된 정렬 행렬 :  [1 3 5 9]\n",
+            "np.sort()호출 후 원본 행렬 :  [3 1 9 5]\n",
+            "np.sort()호출 후 반환된 정렬 행렬 :  None\n",
+            "np.sort()호출 후 원본 행렬 :  [1 3 5 9]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "sort_array1_desc = np.sort(org_array)[::-1]\n",
+        "print('내림차순으로 정렬 : ', sort_array1_desc)"
+      ],
+      "metadata": {
+        "id": "BgYlphwGU0dt",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "642a91f7-2edb-4670-810b-550492e3f6a0"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "내림차순으로 정렬 :  [9 5 3 1]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "array2d = np.array([[8, 12], [7, 1]])\n",
+        "\n",
+        "sort_array2d_axis0 = np.sort(array2d, axis = 0)\n",
+        "print('로우 방향으로 정렬 : \\n', sort_array2d_axis0)\n",
+        "\n",
+        "sort_array2d_axis1 = np.sort(array2d, axis = 1)\n",
+        "print('칼럼 방향으로 정렬 : \\n', sort_array2d_axis1)"
+      ],
+      "metadata": {
+        "id": "vl4_nWpcW7Dh",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "4e83a96a-c0ad-4d69-ce54-4ade111d0d9f"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "로우 방향으로 정렬 : \n",
+            " [[ 7  1]\n",
+            " [ 8 12]]\n",
+            "칼럼 방향으로 정렬 : \n",
+            " [[ 8 12]\n",
+            " [ 1  7]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from sklearn.datasets import fetch_openml\n",
+        "\n",
+        "mnist = fetch_openml('mnist_784', as_frame = False)"
+      ],
+      "metadata": {
+        "id": "TDFOM8XlR1xX",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "36d2e490-b726-4b82-820b-9800647d0571"
+      },
+      "execution_count": 3,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stderr",
+          "text": [
+            "/usr/local/lib/python3.10/dist-packages/sklearn/datasets/_openml.py:968: FutureWarning: The default value of `parser` will change from `'liac-arff'` to `'auto'` in 1.4. You can set `parser='auto'` to silence this warning. Therefore, an `ImportError` will be raised from 1.4 if the dataset is dense and pandas is not installed. Note that the pandas parser may return different data types. See the Notes Section in fetch_openml's API doc for details.\n",
+            "  warn(\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "X, y = mnist.data, mnist.target\n",
+        "\n",
+        "X.shape\n",
+        "\n",
+        "y.shape"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "SohDyjUDfWob",
+        "outputId": "eab3b59f-0f87-40e3-af53-4d199c45f0cc"
+      },
+      "execution_count": 4,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "(70000,)"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 4
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import matplotlib.pyplot as plt\n",
+        "\n",
+        "def plot_digit(image_data):\n",
+        "    image = image_data.reshape(28, 28)\n",
+        "    plt.imshow(image, cmap = \"binary\")\n",
+        "    plt.axis(\"off\")\n",
+        "\n",
+        "    some_digit = X[0]\n",
+        "    plot_digit(some_digit)\n",
+        "    plt.show()"
+      ],
+      "metadata": {
+        "id": "nFZJAebviETK"
+      },
+      "execution_count": 5,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "y[0]"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 35
+        },
+        "id": "e8ktSkaXiuj8",
+        "outputId": "90b687c6-4b40-4ae5-f1f6-7926611b6fea"
+      },
+      "execution_count": 6,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "'5'"
+            ],
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "string"
+            }
+          },
+          "metadata": {},
+          "execution_count": 6
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "X_train, X_test, y_train, y_test = X[:60000], X[60000:], y[:60000], y[60000:]"
+      ],
+      "metadata": {
+        "id": "YWMoKn9Zjpvi"
+      },
+      "execution_count": 7,
+      "outputs": []
+    }
+  ]
+}
